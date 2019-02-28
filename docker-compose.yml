@@ -1,9 +1,16 @@
 version: '3'
 
 services:
+  adopt:
+    container_name: 'adopt'
+    build: ./adopt
+    volumes:
+      - ./src:/src
   corretto:
     container_name: 'corretto'
     build: ./corretto
     volumes:
       - ./src:/src
+    depends_on:
+      - adopt
 
