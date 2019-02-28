@@ -15,4 +15,12 @@ services:
       - ./corretto:/out
     depends_on:
       - adopt
+  ibmsdk:
+    container_name: 'ibmsdk'
+    build: ./ibmsdk
+    volumes:
+      - ./src:/src
+      - ./ibmsdk:/out
+    depends_on:
+      - corretto
 
