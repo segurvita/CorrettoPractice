@@ -23,4 +23,12 @@ services:
       - ./ibmsdk:/out
     depends_on:
       - corretto
+  zulu:
+    container_name: 'zulu'
+    build: ./zulu
+    volumes:
+      - ./src:/src
+      - ./zulu:/out
+    depends_on:
+      - ibmsdk
 
