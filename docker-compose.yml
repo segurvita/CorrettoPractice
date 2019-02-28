@@ -6,11 +6,13 @@ services:
     build: ./adopt
     volumes:
       - ./src:/src
+      - ./adopt:/out
   corretto:
     container_name: 'corretto'
     build: ./corretto
     volumes:
       - ./src:/src
+      - ./corretto:/out
     depends_on:
       - adopt
 
